@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import {React, Component} from 'react';
+import {connect} from 'react-redux';
+import {createGetTasksAction} from './actions'
+import ConnectedTasksList from './components/TasksList'
+import ConnectedTaskPage  from './components/TaskPage'
+import {Route, BrowserRouter, NavLink} from 'react-router-dom'
+import ConnectedTaskForm from './components/TaskForm';
+import ConnectedSearchResultsPage from './components/SearchResultsPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount(){
+    this.props.dispatch(createGetTasksAction());
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <div style={{margin:'15px 5%',textAlign:'left'}}><NavLink to=  {`/tasks`}  style={{textDecoration:'none',color:'maroon'}}><button>Home</button></NavLink></div>
+          <Route exact path='/tasks' component={ConnectedTasksList} />
+          <Route exact path='/tasks/form' component={ConnectedTaskForm} />
+          <Route exact path='/tasks/form/:id(\d+)' component={ConnectedTaskForm} />
+          <Route exact path='/tasks/:id(\d+)' component={ConnectedTaskPage} />
+          <Route exact path='/tasks/search' component={ConnectedSearchResultsPage} />
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
-export default App;
+const ConnectedApp = connect((store)=>({store:store}))(App)
+
+export default ConnectedApp;
