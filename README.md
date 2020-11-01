@@ -5,7 +5,7 @@ also user can delete or update this task. User can search for specific task by k
 keyword in title or description.
 This application consumes end points provides by nodejs backend server.
 
-#content
+# content
 task_manager/
     public/
         index.html
@@ -33,8 +33,8 @@ task_manager/
     README.md
 
 
-#installition 
-This command to install npm
+# installition 
+## This command to install npm
     npm install
-to launch the application run the following command line
+## to launch the application run the following command line
     npm start 
