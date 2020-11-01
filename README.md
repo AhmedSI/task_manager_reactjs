@@ -6,31 +6,31 @@ keyword in title or description.
 This application consumes end points provides by nodejs backend server.
 
 # content
-task_manager/
-    public/
-        index.html
-    src/
-        actions/
-            index.js
-        components/
-            SearchBar.js
-            SearchResultsPage.js
-            Task.js
-            TaskForm.js
-            TaskPage.js
-            TasksList.js
-        reducers/
-            index.js
-        sagas/
-            index.js
-        App.css
-        App.js
-        App.test.js
-        index.css
-        index.js
-    package-lock.json
-    package.json
-    README.md
+### task_manager/
+###     public/
+###         index.html
+###     src/
+###         actions/
+###             index.js
+###         components/
+###             SearchBar.js
+###             SearchResultsPage.js
+###             Task.js
+###             TaskForm.js
+###             TaskPage.js
+###             TasksList.js
+###         reducers/
+###             index.js
+###         sagas/
+###             index.js
+###         App.css
+###         App.js
+###         App.test.js
+###         index.css
+###         index.js
+###     package-lock.json
+###     package.json
+###     README.md
 
 
 # installition 
